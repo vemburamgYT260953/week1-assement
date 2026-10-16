@@ -34,11 +34,3 @@ Security
 API credentials must be stored locally in .env. The .env file must not be committed to Git.
 Conclusion
 This project demonstrates Python fundamentals, object-oriented programming, data processing, API handling, data visualization, and version control.
-jupyter : The term 'jupyter' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, 
-or if a path was included, verify that the path is correct and try again.
-At line:1 char:1
-+ jupyter nbconvert --to script notebooks/analysis.ipynb --output-dir=n ...
-+ ~~~~~~~
-    + CategoryInfo          : ObjectNotFound: (jupyter:String) [], CommandNotFoundException
-    + FullyQualifiedErrorId : CommandNotFoundException
-    
