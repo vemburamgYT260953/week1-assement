@@ -1,9 +1,8 @@
 Week 1 Python and Data Engineering Assessment
-#---------------------------------------------------------
+
 Project Overview
-#--------------------------------------------------------------
+
 This project analyzes employee and department data using Python, NumPy, Pandas, Matplotlib, REST APIs, JSON, and Git.
-#---------------------------------------------------------------------------------------------
 
 Project Structure:
 
@@ -20,28 +19,28 @@ Activate the virtual environment.
 Install packages using python -m pip install -r requirements.txt.
 Create a local .env file if API credentials are required.
 Run the scripts from the project root.
-#-------------------------------------------------------------
+
 Run the Assessment
 Task 1: python src/task1.py
 Task 2: python src/task2.py
 Task 3: python src/task3.py
 Notebook: jupyter notebook
-#------------------------------------------------------------------
+
 Five Key Findings:
 The dataset contains eight employee records.
 Five employees earn more than 50,000.
 Chennai has four employees.
 IT has the highest headcount, with three employees.
 Marketing has no employees and appears in the outer join.
-#-----------------------------------------------------------------------
+
 Data Cleaning
-Two missing salaries were introduced in a separate test dataset and filled using the median. A duplicate record was also introduced and removed. The original employee CSV remains unchanged.
-#-------------------------------------------------------------------------------
+Two missing salaries were introduced in a separate test dataset and filled using the median. A duplicate record was also introduced and removed. The original employee CSV rema
+
 Charts
-The project generates bar, histogram, scatter, and line charts in the reports/ directory.
-#---------------------------------------------------------------------------------
+The project generates bar, histogram, scatter, and line charts in the reports/ dir
+
 Security
-API credentials must be stored locally in .env. The .env file must not be committed to Git.
-#----------------------------------------------------------------------------------
+API credentials must be stored locally in .env. The .env file must not be committed
+
 Conclusion
 This project demonstrates Python fundamentals, object-oriented programming, data processing, API handling, data visualization, and version control.
