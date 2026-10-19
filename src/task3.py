@@ -11,7 +11,7 @@ REPORTS = ROOT / "reports"
 
 REPORTS.mkdir(exist_ok=True)
 
-# PART A: NumPy
+# NumPy
 marks = np.array([
     [80, 75, 90],
     [65, 70, 72],
@@ -30,7 +30,7 @@ weights = np.array([0.4, 0.3, 0.3])
 weighted_scores = np.dot(marks, weights)
 print("Weighted scores:", weighted_scores)
 
-# PART B: Pandas
+# Pandas
 df = pd.read_csv(DATA / "employees.csv")
 
 print("\nData information:")
@@ -47,7 +47,6 @@ print(df.iloc[0:3, 0:3])
 print("\nEmployees earning above 50000:")
 print(df[df["salary"] > 50000])
 
-# Add two missing salaries and one duplicate row for cleaning practice
 dirty_df = df.copy()
 dirty_df.loc[0, "salary"] = np.nan
 dirty_df.loc[2, "salary"] = np.nan
@@ -71,7 +70,7 @@ print("\nCleaned data:")
 print(dirty_df)
 print("Missing salaries filled with median:", median_salary)
 
-# PART C: Department data
+# Department data
 departments = pd.DataFrame([
     {"department": "Sales", "head": "Ravi", "budget": 200000},
     {"department": "HR", "head": "Lakshmi", "budget": 150000},
@@ -82,7 +81,6 @@ departments = pd.DataFrame([
 
 departments.to_csv(DATA / "departments.csv", index=False)
 
-# Analyze the original employee data
 summary = df.groupby("department").agg(
     headcount=("id", "count"),
     average_salary=("salary", "mean"),
@@ -102,7 +100,7 @@ left_join = pd.merge(df, departments, on="department", how="left")
 print("\nLeft join:")
 print(left_join[["name", "department", "head"]])
 
-# Outer join: includes departments without employees
+# Outer join
 outer_join = pd.merge(df, departments, on="department", how="outer")
 print("\nOuter join:")
 print(outer_join[["name", "department", "head"]])
@@ -114,9 +112,9 @@ empty_departments = [
 ]
 print("Departments with no employees:", empty_departments)
 
-# PART D: Four charts
+# Four charts
 
-# 1. Bar chart: average salary by department
+# Bar chart
 avg_salary = df.groupby("department")["salary"].mean()
 
 avg_salary.plot(kind="bar", label="Average salary")
@@ -130,7 +128,7 @@ plt.close()
 
 print("Insight: Finance has the highest average salary.")
 
-# 2. Histogram: salary distribution
+# Histogram
 df["salary"].plot(kind="hist", bins=5, label="Employees")
 plt.title("Employee Salary Distribution")
 plt.xlabel("Salary")
@@ -142,7 +140,7 @@ plt.close()
 
 print("Insight: Salaries vary across the employee group.")
 
-# 3. Scatter chart: employee ID against salary
+# Scatter chart
 plt.scatter(df["id"], df["salary"], label="Employees")
 plt.title("Employee ID vs Salary")
 plt.xlabel("Employee ID")
@@ -154,7 +152,7 @@ plt.close()
 
 print("Insight: Employee ID does not represent salary rank.")
 
-# 4. Line chart: salaries by employee ID
+# Line chart
 plt.plot(
     df["id"], df["salary"],
     marker="o", label="Salary"
@@ -169,7 +167,7 @@ plt.close()
 
 print("Insight: Salary changes from one employee record to another.")
 
-# Save useful reports
+# Saving the reports
 summary.to_csv(REPORTS / "department_summary.csv", index=False)
 
 print("\nAll four charts and department summary saved in reports/.")

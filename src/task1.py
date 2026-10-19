@@ -56,7 +56,7 @@ employees = [
      "salary": 48000, "city": "Mumbai"},
 ]
 
-# Function, *args and **kwargs
+# Function
 print("Bonus:", bonus(10000, 0.1, 500, 300, cap=1500))
 
 # List comprehension
@@ -65,19 +65,18 @@ high_names = [
 ]
 print("Above 50000:", high_names)
 
-# map and lambda: 10% raise
 raised_salaries = list(
     map(lambda emp: emp["salary"] * 1.10, employees)
 )
 print("Raised salaries:", raised_salaries)
 
-# filter: Chennai employees
+# filtering
 chennai_employees = list(
     filter(lambda emp: emp["city"] == "Chennai", employees)
 )
 print("Chennai:", [emp["name"] for emp in chennai_employees])
 
-# OOP and inheritance
+# inheritance
 employee = Employee("Rahul", 60000)
 manager = Manager("Divya", 75000, 5)
 
@@ -85,7 +84,7 @@ print(employee.get_details())
 print("Annual salary:", employee.annual_salary())
 print(manager.get_details())
 
-# Custom exception and finally
+# exception and finally
 try:
     invalid_employee = Employee("Test", -500)
 except InvalidSalaryError as error:
@@ -93,8 +92,6 @@ except InvalidSalaryError as error:
 finally:
     print("Transaction finished")
 
-# continue: skip salary 0
-# break: stop at the first salary above 85000
 for emp in employees:
     salary = emp["salary"]
 

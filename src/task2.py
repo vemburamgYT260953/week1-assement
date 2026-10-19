@@ -13,7 +13,7 @@ DATA = ROOT / "data"
 load_dotenv(ROOT / ".env")
 api_key = os.getenv("API_KEY")
 
-# Read CSV and create JSON
+# CSV and JSON
 with open(DATA / "employees.csv", newline="", encoding="utf-8") as file:
     employees = list(csv.DictReader(file))
 
@@ -24,7 +24,6 @@ for emp in employees:
 with open(DATA / "employees.json", "w", encoding="utf-8") as file:
     json.dump(employees, file, indent=4)
 
-# Export high earners
 high_earners = [emp for emp in employees if emp["salary"] > 50000]
 
 with open(DATA / "high_earners.csv", "w", newline="", encoding="utf-8") as file:
@@ -34,7 +33,7 @@ with open(DATA / "high_earners.csv", "w", newline="", encoding="utf-8") as file:
 
 print(f"Rows read: {len(employees)} | High earners: {len(high_earners)}")
 
-# Call API safely
+# Calling API 
 url = "https://jsonplaceholder.typicode.com/users"
 
 try:
@@ -45,7 +44,6 @@ try:
     for user in users[:3]:
         print(f'{user["id"]} - {user["name"]} - {user["email"]}')
 
-    # Read nested JSON using .get()
     first_company = users[0].get("company", {})
     company_name = first_company.get("name", "Unknown")
 
@@ -67,7 +65,7 @@ except requests.exceptions.HTTPError as error:
 except (ValueError, KeyError, IndexError) as error:
     print("Invalid API response:", error)
 
-# Test the 404 endpoint separately
+# Testing the 404 endpoints 
 try:
     response = requests.get(
         "https://jsonplaceholder.typicode.com/users/9999",
