@@ -2,6 +2,7 @@ Week 1 Python and Data Engineering Assessment
 
 Project Overview
 
+Project Overview
 This project analyzes employee and department data using Python, NumPy, Pandas, Matplotlib, REST APIs, JSON, and Git.
 
 Project Structure:
@@ -35,12 +36,15 @@ Marketing has no employees and appears in the outer join.
 
 Data Cleaning
 Two missing salaries were introduced in a separate test dataset and filled using the median. A duplicate record was also introduced and removed. The original employee CSV rema
+Two missing salaries were introduced in a separate test dataset and filled using the median. A duplicate record was also introduced and removed. The original employee CSV remains unchanged.
 
 Charts
 The project generates bar, histogram, scatter, and line charts in the reports/ dir
 
 Security
 API credentials must be stored locally in .env. The .env file must not be committed
+API credentials must be stored locally in .env. The .env file must not be committed to Git.
+
 
 Conclusion
 This project demonstrates Python fundamentals, object-oriented programming, data processing, API handling, data visualization, and version control.
